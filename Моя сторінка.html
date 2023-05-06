@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href="search.html">Пошук Google</a>
+        <a href="image-search.html">Пошук зображень</a>
+        <a href="advanced-search.html">Розширений пошук</a>
+    </header>
+
+    <main>
+        <h1>Ласкаво просимо на сторінку пошуку Google</h1>
+
+        <!-- Сторінця пошуку Google -->
+        <div id="search-page">
+            <input type="text" id="search-input" placeholder="Введіть запит">
+            <button id="search-button">Пошук Google</button>
+        </div>
+
+        <!-- Сторінця пошуку зображень Google -->
+        <div id="image-search-page">
+            <input type="text" id="image-search-input" placeholder="Введіть запит для пошуку зображень">
+            <button id="image-search-button">Пошук зображень</button>
+        </div>
+
+        <!-- Сторінця розширеного пошуку Google -->
+        <div id="advanced-search-page">
+            <h2>Розширений пошук</h2>
+            <form>
+                <label for="all-words">Знайти сторінки із... "усіма цими словами":</label>
+                <input type="text" id="all-words">
+
+                <label for="exact-phrase">Знайти сторінки з... "саме цим словом або фразою":</label>
+                <input type="text" id="exact-phrase">
+
+                <label for="none-of-words">Знайти сторінки з... "жодне з цих слів":</label>
+                <input type="text" id="none-of-words">
+    
+                <button id="advanced-search-button">Розширений пошук</button>
+            </form>
+        </div>
+    
+        <a href="search.html" id="back-to-search">Повернутися до пошуку Google</a>
+    </main>
+    
+    <footer>
+        <a href="https://www.google.com/doodles/">Мені пощастить</a>
+    </footer>
+    
+    <script>
+        // Обробник події для кнопки "Пошук Google"
+        document.getElementById('search-button').addEventListener('click', searchGoogle);
+    
+        // Функція пошуку Google
+        function searchGoogle() {
+            var searchInput = document.getElementById('search-input').value;
+            // Виконайте дії, які потрібно зробити з введеним запитом пошуку
+            // Наприклад, можна перенаправити користувача на сторінку результатів пошуку Google:
+            window.location.href = 'https://www.google.com/search?q=' + encodeURIComponent(searchInput);
+        }
+    </script>
+    
